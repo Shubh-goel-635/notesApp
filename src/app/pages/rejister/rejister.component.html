@@ -1,0 +1,57 @@
+<body>
+    <div class="form">
+        <form [formGroup]="rejisterForm" (ngSubmit)="onSubmit()">
+            <p>
+                <img mat-card-image src="../../assets/images/pass.png">
+            </p>
+            <h2 style="font-size: x-large;">{{ "Sign Up" }}</h2>
+            <div>
+                <p>
+                    <span>
+                            <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+                                <mat-label>First Name</mat-label>
+                                <input matInput type="text" formControlName="fname">
+                                <mat-error *ngIf="this.rejisterForm.controls['fname'].invalid">{{"Enter valid name"}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="legacy">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput type="text" formControlName="lname">
+                            </mat-form-field>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <mat-form-field appearance="legacy" style="width: 310px;" [hideRequiredMarker]="true">
+                            <mat-label>Email Id</mat-label>
+                            <input matInput type="email" formControlName="email">
+                            <mat-error *ngIf="this.rejisterForm.controls['email'].invalid">{{"Enter a valid email"}}</mat-error>
+                        </mat-form-field>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                            <mat-error *ngIf="this.rejisterForm.controls['password'].invalid">{{"Enter a valid password"}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput type="password" formControlName="confirmPassword">
+                            <mat-error *ngIf="this.rejisterForm.controls['confirmPassword'].invalid">{{"Enter a valid password"}}</mat-error>
+                        </mat-form-field>
+                    </span>
+                    <mat-error class="password-error" *ngIf="this.rejisterForm.controls['password'].valid && this.rejisterForm.controls['confirmPassword'].valid && this.rejisterForm.controls['password'].value != this.rejisterForm.controls['confirmPassword'].value">Passwords do not match</mat-error>
+                </p>
+                <p>
+                    <mat-card-actions>
+                        <button mat-flat-button color="primary" type="submit">Sign Up</button>
+                    </mat-card-actions>
+                </p>
+                <p>
+                    <a routerLink="/signin">Already have an account? Sign In</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>

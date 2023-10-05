@@ -1,0 +1,37 @@
+<body>
+    <div class="form">
+        <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid?onSubmit():''">
+            <img mat-card-image src="../../assets/images/login.png">
+            <p>
+                <span class="mat-h2" style="font-size: x-large;">{{ "Sign In" }}</span>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                    <mat-icon matSuffix>mail</mat-icon>
+                    <mat-label>Email Id</mat-label>
+                    <input matInput formControlName="email" type="email">
+                    <mat-error *ngIf="this.loginForm.controls['email'].invalid">{{"You must enter a valid email"}}</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password">
+                    <mat-error *ngIf="this.loginForm.controls['password'].invalid">{{"You must enter a valid password"}}</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <a routerLink="">Forget password?</a>
+            </p>
+            <p>
+                <mat-card-actions>
+                    <button mat-flat-button color="primary" type="submit">Sign In</button>
+                </mat-card-actions>
+            </p>
+            <p>
+                <a routerLink="/signup">New here? Create an account</a>
+            </p>
+        </form>
+    </div>
+</body>

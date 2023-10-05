@@ -1,0 +1,34 @@
+<body>
+    <div class="form">
+        <form style="width: 300px;" [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+            <p>
+                <img mat-card-image src="../../assets/images/web-browser.png">
+            </p>
+            <h2 style="font-size: x-large;">{{ "Enter OTP" }}</h2>
+            <p>{{ "We have sent an OTP to your email. Please verify it to proceed. This OTP will remain valid for the next 10 minutes." }}</p>
+            <p>
+                <span>
+                    <mat-form-field>
+                        <input #otpInput1 matInput type="number" formControlName="digit1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, otpInput2, null);" >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input #otpInput2 matInput type="number" formControlName="digit2" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, otpInput3, otpInput1)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input #otpInput3 matInput type="number" formControlName="digit3" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, otpInput4, otpInput2)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input #otpInput4 matInput type="number" formControlName="digit4" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, otpInput5, otpInput3)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input #otpInput5 matInput type="number" formControlName="digit5" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, otpInput6, otpInput4)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input #otpInput6 matInput type="number" formControlName="digit6" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (keyup)="onInput($event, null, otpInput5)">
+                    </mat-form-field>
+                </span>
+            </p>
+            <button mat-raised-button color="primary" type="submit">Continue</button>
+        </form>
+    </div>
+</body>
