@@ -2,7 +2,7 @@
 
 body {
   display: flex;
-  min-height: 100vh;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -21,6 +21,23 @@ body {
 
 .mat-form-field {
   width: 140px;
+}
+
+.errorp{
+  position: relative;
+  height: 20px;
+  display: flex;
+  justify-content:center;
+  
+}
+
+.error{
+  position: absolute;
+  width: 300px;
+  display: flex;
+  align-self: self-start;
+  color: red;
+  
 }
 
 img {

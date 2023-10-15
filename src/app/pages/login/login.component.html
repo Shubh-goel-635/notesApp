@@ -5,6 +5,9 @@
             <p>
                 <span class="mat-h2" style="font-size: x-large;">{{ "Sign In" }}</span>
             </p>
+            <p class="errorp">
+                <span class="error" *ngIf="isError">{{ error }}</span>
+            </p>
             <p>
                 <mat-form-field appearance="outline" [hideRequiredMarker]="true">
                     <mat-icon matSuffix>mail</mat-icon>

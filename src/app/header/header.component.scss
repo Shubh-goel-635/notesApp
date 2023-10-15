@@ -1,0 +1,64 @@
+header {
+    height: 3.5rem;
+    width: 100%;
+    background-color: #3f51b5;
+    display: flex;
+}
+
+.product-name, .user-name  {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex:none;
+    align-items: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 0 2rem;
+}
+
+img {
+    align-self: center;
+    justify-self: center;
+}
+
+.user-name {
+    margin-right: 0;
+    margin-left: auto;
+    font-weight: 400;
+    font-size: 14px;
+    justify-content: center;
+
+}
+
+.user-name > img {
+    padding-right:10px;
+}
+
+.search-bar {
+    scale: 0.4;
+}
+
+@media screen and (max-width: 600px) {
+    .product-name, .user-name  {
+        font-size: 22px;
+        padding: 0 1rem;
+    }
+
+    .name {
+        display: none;
+    }
+    .user-name > img {
+        padding-right:0;
+    }
+
+    .product-name, .user-name  {
+        padding: 0 1rem;
+    }
+
+    .search-bar {
+        scale: 0.4;
+    }
+  }
+  

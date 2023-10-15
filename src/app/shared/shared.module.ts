@@ -13,6 +13,7 @@ import { OtpComponent } from './components/otp/otp.component'
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../pages/login/login.component';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
 
 const modules = [
   MatButtonModule,
@@ -31,6 +32,8 @@ const modules = [
 @NgModule({
   imports: [...modules],
   exports: [...modules,],
-  declarations: []
+  declarations: [
+    CardComponent
+  ]
 })
 export class SharedModule { }

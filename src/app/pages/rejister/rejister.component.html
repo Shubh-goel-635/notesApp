@@ -5,6 +5,9 @@
                 <img mat-card-image src="../../assets/images/pass.png">
             </p>
             <h2 style="font-size: x-large;">{{ "Sign Up" }}</h2>
+            <p class="errorp">
+                <span class="error" *ngIf="isError">{{ error }}</span>
+            </p>
             <div>
                 <p>
                     <span>

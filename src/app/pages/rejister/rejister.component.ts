@@ -11,6 +11,8 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class RejisterComponent implements OnInit {
   @HostBinding('class') className = '';
   rejisterForm: FormGroup;
+  isError = false;
+  error: String;
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -35,11 +37,15 @@ export class RejisterComponent implements OnInit {
       this.rejisterForm.controls['email'].value,
       this.rejisterForm.controls['password'].value).subscribe((res) => {
         console.log(res);
-        if (res.payload.code === 200) {
+        if (res.code === 200) {
           this.router.navigate(['/signup/otp', res.payload.email]);
-        } else {
-          console.log(res.error);
+        } else if (res.code === 202) {
+          this.isError = true;
+          this.error = "Account already exists. Please log in.";
         }
+      }, (err) => {
+        this.isError = true;
+        this.error = err.error.error;
       });
   }
 
